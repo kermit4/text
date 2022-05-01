@@ -1,6 +1,6 @@
 TCP is for simple short lived conversations between two peers, like loading or downloading a file, with some reasonable guesses as to how you would like to handle packet loss.
 
-The prime "feature" of TCP is that delays messages
+The prime "feature" of TCP is that it delays messages.
 
 Use UDP in the following cases:
 - you plan to continue or retry the conversation after IP changes or long silences, as you now need to address retransmission, sequence, acknowledgements, and timeouts, at a larger time granularity, which would leave two competing and duplicated systems if TCP was still used, which only result in artificial delays.
