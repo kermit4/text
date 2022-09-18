@@ -25,3 +25,5 @@ TCP does do a few other things, most notably addressing packet sizes, but in the
 TCP's timers are independent, by specification, so when messaging thousands of peers, your own traffic is competing with itself, versus if it had awareness and control of the timing itself.
 
 With TCP the application does not have clear visibility into either the packet loss, or the latency, when speaking with a peer.  This information is very relevant to deciding which peers to communitae with, in a widely distributed application.
+
+In many use cases you have multiple conversations or streams happenning that should not share a single flow control / retransmission delays.  A bulk transfer should not cause latency for a separate unrelated conversation.  A single TCP session is inappropriate in scenarios where there are multiple conversations occuring,   Only a single stream of sequentially accessed data should exist per TCP session, othherwise messages are delayed for reasons not applicable to them.  I.e. if I'm moving furniture from one house to another, I don't need my water bill to wait for that.  That's a different conversation.  It should have its own queue.   
