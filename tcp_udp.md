@@ -14,7 +14,7 @@ Use UDP in the following cases:
 
 It is a rare case in fact where a modern application does not handle acknowledgement, retransmission, and ordering, at larger timescales, so it is incorrect to say this is handled by TCP, but that it is, in the common case, duplicated.  Unless high throughput is needed to offload this onto the operating system or hardware, then latency sensitive applicaions will maintain more control at no additional cost.
 
-It is also incorrect to say TCP gauruntees ordering and retransmission.  It only gauruntees ordering if an application does not retry a new connection after a TCP session failure.   So, if an application does retry, then it has duplicated or even defeated those features of TCP.
+It is also incorrect to say TCP guarantees ordering and retransmission.  It only guarantees ordering if an application does not retry a new connection after a TCP session failure.   So, if an application does retry, then it has duplicated or even defeated those features of TCP.
 
 TCP is from a simple era when applications would simply pass a session failure up to the user, networks were local so failures were less common than the internet scenario, and data sent was raw without any metadata, i.e. not messages but streams.
 
