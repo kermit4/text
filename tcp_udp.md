@@ -16,7 +16,7 @@ It is a rare case in fact where a modern application does not handle acknowledge
 
 It is also incorrect to say TCP guarantees ordering and retransmission.  It only guarantees ordering if an application does not retry a new connection after a TCP session failure.   So, if an application does retry, then it has duplicated or even defeated those features of TCP.
 
-TCP is from a simple era when applications would simply pass a session failure up to the user, networks were local so failures were less common than the internet scenario, and data sent was raw without any metadata, i.e. not messages but streams.
+TCP is from a simple era when applications would simply pass a session failure up to the user, losing messages, disconnecting and often silently, so there was no duplication at the application level for retransmission.  Data sent was raw without any metadata, i.e. not messages but streams.   Modern applications retransmit and reconnect, duplicating the features of TCP, so it is now redundant and only increases delay and reduces control and visibility.
 
 TCP is for streams, not messages.
 
