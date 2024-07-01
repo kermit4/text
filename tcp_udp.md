@@ -1,4 +1,4 @@
-TCP is for simple short lived conversations between two peers, like loading or downloading a file, with some reasonable guesses as to how you would like to handle packet loss.
+TCP is for simple short lived conversations between two peers, like uploading or downloading a file, with some reasonable guesses as to how you would like to handle packet loss.
 
 The prime "feature" of TCP is that it delays messages.
 
